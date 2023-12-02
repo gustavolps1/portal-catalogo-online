@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios"
 import { FoodData } from '../interface/FoodData';
 
-const API_URL = 'http://api-produto-pitsi2-production.up.railway.app';
+const API_URL = 'https://api-produto-pitsi2-production.up.railway.app';
 
 const fetchData = async (): AxiosPromise<FoodData[]> => {
     const response = axios.get(API_URL + '/produto');
