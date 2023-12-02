@@ -7,10 +7,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import "./modal.css";
 
-export function CreateModal({ onClose }) {
+interface CreateModalProps {
+    onClose: () => void;
+}
+
+export function CreateModal({ onClose }: CreateModalProps) {
     const [rows, setRows] = useState<FoodData[]>([]);
     const { mutate, isSuccess, isLoading } = useFoodDataMutate();
     const { data } = useFoodData();
+
+
 
     const handleSave = () => {
         mutate(rows); 
